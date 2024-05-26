@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Tasks({ allTasks,task, setTasks }) {
+export default function Tasks({ task, setTasks }) {
 
 
   const completeTaskHandler = (taskId) => {

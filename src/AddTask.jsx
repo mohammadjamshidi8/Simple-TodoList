@@ -30,6 +30,11 @@ export default function AddTask() {
         inputRef.current.focus()
     }
 
+    // delete all tasks function 
+    const deleteAllTask = () => {
+        setTasks([])
+    }
+
 
   return (
     <div className='flex flex-col items-center gap-y-4'>
@@ -39,6 +44,7 @@ export default function AddTask() {
             <button  onClick={addTaskHandler} className='w-1/4 px-6 py-3 bg-teal-400 rounded-md font-thin'>ADD</button>
         </div>
         {tasks.map(task => <Tasks key={task.id} task={task} allTasks={tasks} setTasks={setTasks} />)}
+        {tasks.length ? <button onClick={deleteAllTask} className='px-6 py-3 rounded-md bg-orange-400 text-white font-bold hover:bg-orange-500 transition-colors duration-300'>Delete All</button> : null}
     </div>
   )
 }
